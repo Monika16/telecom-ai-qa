@@ -87,15 +87,17 @@ The initial focus is the Add Customer functionality.
 
 ### Automated Test Scenarios
 
-| Test ID | Scenario                         | Status    | Result |
-|---------|----------------------------------|-----------|--------|
-| AC-001  | Add customer with valid details  | Automated | Passed |
-| AC-015  | Submit with empty First Name     | Automated | Passed |
-| AC-016  | Submit with empty Last Name      | Automated | Passed |
-| AC-017  | Submit with empty Email          | Automated | Passed |
-| AC-018  | Submit with empty Address        | Automated | Passed |
-| AC-019  | Submit with empty Telephone      | Automated | Passed |
-| AC-020  | Submit with invalid Email format | Automated | Passed |
+| Test ID    | Scenario                            | Status    | Result |
+|------------|-------------------------------------|-----------|--------|
+| AC-001     | Add customer with valid details     | Automated | Passed |
+| AC-011     | Leading spaces in First Name        | Automated | Passed |
+| AC-012     | Trailing spaces in First Name       | Automated | Passed |
+| AC-015     | Submit with empty First Name        | Automated | Passed |
+| AC-016     | Submit with empty Last Name         | Automated | Passed |
+| AC-017     | Submit with empty Email             | Automated | Passed |
+| AC-018     | Submit with empty Address           | Automated | Passed |
+| AC-019     | Submit with empty Telephone         | Automated | Passed |
+| AC-020     | Submit with invalid Email format    | Automated | Passed |
 
 **Current automation progress:** 7 test scenarios automated and reported as passed.
 
@@ -115,7 +117,31 @@ Current activities:
 
 AI-generated scenarios are reviewed and validated before being included in the automation suite.
 
-## 8. Installation and Setup
+## 8. Parameterized Testing
+Pytest parameterization is used to execute multiple input variations using a single test function.
+
+Current implementation includes:
+
+First Name validation with leading spaces.
+First Name validation with trailing spaces.
+Multiple input combinations with expected validation results.
+Reusable test logic to reduce duplicate automation code.
+
+Example:
+
+@pytest.mark.parametrize(
+    "first_name, expected_output",
+    [
+        ("      John", "First character can not have space"),
+        ("John        ", ""),
+    ]
+)
+def test_add_customer_firstname_with_spaces(...):
+    ...
+
+Parameterized tests improve test coverage, maintainability, and code reusability.
+
+## 9. Installation and Setup
 
 ### Prerequisites
 
@@ -160,7 +186,7 @@ Install Playwright browser:
 playwright install chromium
 ```
 
-## 9. Execute Automation Tests
+## 10. Execute Automation Tests
 
 Run all tests:
 
@@ -180,7 +206,7 @@ Generate an HTML report (if pytest-html is installed):
 pytest -v --html=reports/report.html --self-contained-html
 ```
 
-## 10. Test Documentation
+## 11. Test Documentation
 
 Test scenarios and detailed test cases are maintained separately.
 
@@ -189,7 +215,7 @@ Test scenarios and detailed test cases are maintained separately.
 * `customer_test_cases.md` – Detailed functional test cases.
 * `test_traceability.md` – Mapping between test IDs and automation scripts.
 
-## 11. Future Enhancements
+## 12. Future Enhancements
 
 The following capabilities are planned:
 
@@ -203,7 +229,7 @@ The following capabilities are planned:
 * Agentic AI for software testing.
 * Extend automation to Create Tariff Plan, Assign Tariff Plan, and View Customer Billing.
 
-## 12. Project Status
+## 13. Project Status
 
 **Current Phase:** Add Customer Module – UI Automation
 
@@ -217,11 +243,21 @@ The following capabilities are planned:
 | Positive test automation      | Completed   |
 | Required-field negative tests | Completed   |
 | Invalid email validation      | Completed   |
-| Whitespace validation         | Planned     |
-| Parameterized testing         | Planned     |
+| Whitespace validation         | Completed   |
+| Parameterized testing         | Completed   |
 | API testing                   | Planned     |
 | CI/CD integration             | Planned     |
 | Agentic AI testing            | Planned     |
+
+## Day-wise Progress section
+
+| Day  | Work completed                                           |
+|------|----------------------------------------------------------|
+| Day1 | Requirements analysis and test scenario documentation    |
+| Day2 | POM, fixtures, dynamic test data and positive automation |
+| Day3 | AI-assisted test scenario review and negative testing    |
+| Day4 | Required-field validation automation                     |
+| Day5 | Whitespace validation and pytest parameterization        |
 
 ---
 
