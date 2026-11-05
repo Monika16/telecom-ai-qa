@@ -136,6 +136,7 @@ Example:
         ("John        ", ""),
     ]
 )
+
 def test_add_customer_firstname_with_spaces(...):
     ...
 
