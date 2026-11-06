@@ -87,17 +87,23 @@ The initial focus is the Add Customer functionality.
 
 ### Automated Test Scenarios
 
-| Test ID    | Scenario                            | Status    | Result |
-|------------|-------------------------------------|-----------|--------|
-| AC-001     | Add customer with valid details     | Automated | Passed |
-| AC-011     | Leading spaces in First Name        | Automated | Passed |
-| AC-012     | Trailing spaces in First Name       | Automated | Passed |
-| AC-015     | Submit with empty First Name        | Automated | Passed |
-| AC-016     | Submit with empty Last Name         | Automated | Passed |
-| AC-017     | Submit with empty Email             | Automated | Passed |
-| AC-018     | Submit with empty Address           | Automated | Passed |
-| AC-019     | Submit with empty Telephone         | Automated | Passed |
-| AC-020     | Submit with invalid Email format    | Automated | Passed |
+| Test ID | Scenario                          | Status                    | Result               |
+|---------|-----------------------------------|---------------------------|----------------------|
+| AC-001  | Add customer with valid details   | Automated                 | Passed               |
+| AC-011  | Leading spaces in First Name      | Automated                 | Passed               |
+| AC-012  | Trailing spaces in First Name     | Automated                 | Passed               |
+| AC-015  | Submit with empty First Name      | Automated                 | Passed               |
+| AC-016  | Submit with empty Last Name       | Automated                 | Passed               |
+| AC-017  | Submit with empty Email           | Automated                 | Passed               |
+| AC-018  | Submit with empty Address         | Automated                 | Passed               |
+| AC-019  | Submit with empty Telephone       | Automated                 | Passed               |
+| AC-020  | Submit with invalid Email format  | Automated                 | Passed               |
+| AC-014  | Refresh confirmation page         | Automated                 | Passed               |
+| AC-028  | Double-click Submit               | Automated                 | Passed*              |
+| AC-029  | Navigate Back and resubmit        | Automated with workaround | Duplicate reproduced |
+| AC-030  | Correct invalid data and resubmit | Automated                 | Passed               |
+
+*For AC-028, duplicate record creation could not be independently verified because the demo application does not provide a customer lookup facility.*
 
 **Current automation progress:** 7 test scenarios automated and reported as passed.
 
@@ -252,13 +258,14 @@ The following capabilities are planned:
 
 ## Day-wise Progress section
 
-| Day  | Work completed                                           |
-|------|----------------------------------------------------------|
-| Day1 | Requirements analysis and test scenario documentation    |
-| Day2 | POM, fixtures, dynamic test data and positive automation |
-| Day3 | AI-assisted test scenario review and negative testing    |
-| Day4 | Required-field validation automation                     |
-| Day5 | Whitespace validation and pytest parameterization        |
+| Day   | Work completed                                               |
+|-------|--------------------------------------------------------------|
+| Day1  | Requirements analysis and test scenario documentation        |
+| Day2  | POM, fixtures, dynamic test data and positive automation     |
+| Day3  | AI-assisted test scenario review and negative testing        |
+| Day4  | Required-field validation automation                         |
+| Day5  | Whitespace validation and pytest parameterization            |
+| Day 6 | Navigation, duplicate submission, and error recovery testing |
 
 ---
 

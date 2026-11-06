@@ -19,3 +19,12 @@ class CustomerPage:
 
     def submit_form(self):
         self.submit_button.click()
+
+    def trigger_field_events(self):
+        for field in ["#fname", "#lname", "#email", "#telephoneno"]:
+            locator = self.page.locator(field)
+            locator.focus()
+            locator.press("Tab")
+
+        self.page.get_by_role("textbox", name="Enter your address").focus()
+        self.page.get_by_role("textbox", name="Enter your address").press("Tab")

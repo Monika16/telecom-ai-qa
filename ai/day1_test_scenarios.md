@@ -13,11 +13,11 @@
 | AC-011  | Enter leading spaces in a required text field       | Add Customer page is open                                           | Leading spaces are not accepted and appropriate validation is displayed                                            | Medium   | Automated            | Passed           |
 | AC-012  | Enter trailing spaces in a required text field      | Add Customer page is open                                           | Trailing spaces are accepted and customer can be created when all other required fields contain valid data         | Medium   | Automated            | Passed           |
 | AC-013  | Verify Customer ID is unique for multiple customers | Multiple customers have been created                                | Each customer is assigned a unique Customer ID                                                                     | High     |                      |                  |
-| AC-014  | Refresh the page after successful customer creation | Customer has been successfully created and Customer ID is displayed | After refreshing the page, the Customer ID continues to be displayed and no additional customer account is created | Medium   |                      |                  |
+| AC-014  | Refresh the page after successful customer creation | Customer has been successfully created and Customer ID is displayed | After refreshing the page, the Customer ID continues to be displayed and no additional customer account is created | Medium   |                      | Passed           |
 
 
 
-
+    
 
 
 
