@@ -266,7 +266,7 @@ The following capabilities are planned:
 | Day4  | Required-field validation automation                         |
 | Day5  | Whitespace validation and pytest parameterization            |
 | Day 6 | Navigation, duplicate submission, and error recovery testing |
-
+| Day 7 | Test Suite Review and Quality Improvement                    |
 ---
 
 ## Author's Note
