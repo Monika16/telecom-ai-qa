@@ -46,7 +46,7 @@ telecom-ai-qa/
 │
 ├── tests/
 │   └── ui/
-│       └── test_customer.py
+│       └── test_add_customer.py
 │
 ├── utils/
 │   ├── test_data.py
