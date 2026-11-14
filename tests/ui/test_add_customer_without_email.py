@@ -6,5 +6,3 @@ def test_add_customer_without_email(customer_data, customer_page):
    customer_page.fill_form(customer_data)
    validation_text = customer_page.page.locator("form").text_content()
    assert "Email-ID must not be blank" in validation_text
-   customer_page.page.on("dialog", handle_dialog)
-   customer_page.submit_form()

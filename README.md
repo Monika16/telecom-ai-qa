@@ -102,10 +102,22 @@ The initial focus is the Add Customer functionality.
 | AC-028  | Double-click Submit               | Automated                 | Passed*              |
 | AC-029  | Navigate Back and resubmit        | Automated with workaround | Duplicate reproduced |
 | AC-030  | Correct invalid data and resubmit | Automated                 | Passed               |
+| AC-021  | Email containing spaces           | Automated                 | Passed               |
+| AC-022  | Telephone containing letters      | Automated                 | Passed               |
+| AC-024  | One-character First Name          | Automated                 | Passed               |
+| AC-027  | Hyphen in First Name              | Automated-Manual failed   | Passed               |
 
 *For AC-028, duplicate record creation could not be independently verified because the demo application does not provide a customer lookup facility.*
 
 **Current automation progress:** 7 test scenarios automated and reported as passed.
+
+**Observation:**
+The application rejected hyphenated first names with the
+message "Special characters are not allowed".
+
+The automated test successfully verified this behavior.
+However, the application behavior differs from the expected
+requirement to accept hyphenated names.
 
 Additional scenarios are documented and will be automated incrementally.
 
@@ -220,7 +232,7 @@ Test scenarios and detailed test cases are maintained separately.
 * `day1_test_scenarios.md` – Initial requirements-based test scenarios.
 * `day3_test_scenarios.md` – Additional AI-assisted scenarios.
 * `customer_test_cases.md` – Detailed functional test cases.
-* `test_traceability.md` – Mapping between test IDs and automation scripts.
+
 
 ## 12. Future Enhancements
 
@@ -267,6 +279,7 @@ The following capabilities are planned:
 | Day5  | Whitespace validation and pytest parameterization            |
 | Day 6 | Navigation, duplicate submission, and error recovery testing |
 | Day 7 | Test Suite Review and Quality Improvement                    |
+| Day 8 | Data quality and boundary testing                            |
 ---
 
 ## Author's Note

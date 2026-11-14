@@ -14,6 +14,13 @@ def test_add_customer_lasttname_with_spaces(customer_page,customer_data,last_nam
     customer_data["lname"]= last_name
     customer_page.fill_form(customer_data)
     validation_text = customer_page.page.locator("form").text_content()
-    assert  expected_output in validation_text
-    customer_page.page.on("dialog", handle_dialog)
-    customer_page.submit_form()
+    if expected_output:
+        assert expected_output in validation_text
+    else:
+        customer_page.submit_form()
+
+        customer_id = customer_page.page.locator(
+            "//*[@id='main']/div/div/table/tbody/tr[1]/td[2]/h3"
+        ).inner_text()
+
+        assert customer_id.strip() != ""

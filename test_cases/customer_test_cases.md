@@ -259,13 +259,13 @@ investigation.
 
 **Test Data:**
 
-| Field | Initial Value | Corrected Value |
-|---|---|---|
-| First Name | John | John |
-| Last Name | Smith | Smith |
-| Email | johnexample.com | john@example.com |
-| Address | 123 Main Street | 123 Main Street |
-| Telephone | 9876543210 | 9876543210 |
+| Field      | Initial Value   | Corrected Value  |
+|------------|-----------------|:----------------:|
+| First Name | John            |       John       |
+| Last Name  | Smith           |      Smith       |
+| Email      | johnexample.com | john@example.com |
+| Address    | 123 Main Street | 123 Main Street  |
+| Telephone  | 9876543210      |    9876543210    |
 
 **Test Steps:**
 1. Navigate to the Add Customer page.
@@ -291,7 +291,74 @@ investigation.
 - After correcting the email to `john@example.com`, the form submitted successfully.
 - A Customer ID was generated.
 
-**Remarks:**
-Record the actual validation message and whether the other field values are retained after the invalid submission.
+### TC-021: Email Containing Spaces
+
+**Test ID:** AC-021
+
+**Objective:** Verify that an email containing spaces is rejected.
+
+**Test Data:**
+- Email: john example@test.com
+
+**Expected Result:**
+The application should reject an email containing spaces.
+
+**Actual Result:**
+The application did not accept the email address.
+An informational alert was displayed.
+
+**Manual Execution Status:** Passed
+
+### TC-022: Telephone Containing Letters
+
+**Test ID:** AC-022
+
+**Objective:** Verify that letters are not accepted in the telephone field.
+
+**Test Data:**
+- Telephone: 98765abcd1
+
+**Expected Result:**
+The application should prevent alphabetic characters.
+
+**Actual Result:**
+The application displayed a validation message:
+"Characters not allowed".
+
+**Manual Execution Status:** Passed
+
+### TC-024: One-Character First Name
+
+**Test ID:** AC-024
+
+**Objective:** Verify whether a one-character first name is accepted.
+
+**Test Data:**
+- First Name: A
+
+**Expected Result:**
+The application should accept a one-character first name.
+
+**Actual Result:**
+The application accepted the first name.
+
+**Manual Execution Status:** Passed
+
+### TC-027: Hyphen in First Name
+
+**Test ID:** AC-027
+
+**Objective:** Verify whether a hyphen is allowed in the first name.
+
+**Test Data:**
+- First Name: Anne-Marie
+
+**Expected Result:**
+The application should accept a hyphenated first name.
+
+**Actual Result:**
+The application did not allow the special character.
+
+**Manual Execution Status:** Failed
 
 
